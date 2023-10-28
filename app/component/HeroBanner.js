@@ -35,7 +35,7 @@ const HeroBanner = () => {
   className="absolute right-0 bottom-30  w-80 h-auto"
 />
           <h1 className='md:max-w-[370px] font-bold text-[40px]'>
-            Let's Help You Start Out In Tech
+            Lets Help You Start Out In Tech
           </h1>
           <p className='md:max-w-[474px] text-[16px]'>
             Buildbubb helps in Connecting developers and designers to help you create impactful projects and elevate your portfolio
