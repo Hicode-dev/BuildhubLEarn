@@ -6,7 +6,7 @@ const FifthBanner = () => {
   return (
     <div>
         <ContainLayout>
-    <div className='grid md:grid-cols-2  py-32 place-items-center gap-6'>
+    <div className='grid md:grid-cols-2   py-32 place-items-center gap-6'>
         <div className='gap-8 flex-col flex '>
         <StackCard title='Backend Developers' Desc='Skilled in developing the user interface and user experience of websites and applications using HTML, CSS, and JavaScript, React/Nextjs' imageSrc='/Group 62.png' />
             <StackCard title='Digital marketers' Desc='Experienced in promoting products or services online through various marketing channels, including social media, email, search engines, and advertising platforms.' imageSrc='/Group 64.png' />

@@ -16,10 +16,10 @@ const MissionBanner = () => {
         <div >
           <p className="text-gray-800 text-md" />
 
-          <h1 className="font-semibold text-[40px]" >
+          <h1 className="font-semibold text-[32px] md:text-[40px]" >
             Mission
           </h1>
-          <p className="leading-[28.8px] text-[24px] font-[600] py-4" >
+          <p className="leading-[28.8px] text-[16px] md:text-[24px] font-[600] py-4" >
             At Buildhubb, we are committed to:
           </p>
             <div className="text-[24px] md:max-w-[674px]">
@@ -33,7 +33,7 @@ const MissionBanner = () => {
         </div>
         <div>
      <ContainLayout>
-     <div className="md:py-6 flex justify-center items-center flex-col  mx-auto">
+     <div className="md:py-6 md:flex hidden justify-center items-center flex-col  mx-auto">
             <MissionCard
               className="shadow-lg bg-white rounded-xl flex items-center p-5 my-5 w-[90%]"
               svg={

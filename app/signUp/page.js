@@ -1,22 +1,21 @@
 import React from 'react'
 import Footer from '../component/Footer'
 import Image from 'next/image'
+import ContainLayout from '../Layout/Container'
+import Header from '../Layout/Navbar'
 
 const page = () => {
     return (
 <>
-<div className='py-4 shadow-lg flex justify-center items-center '>
-<Image src='/buildhubb_logo-removebg-preview 2.png' alt='wedf' width='59' className='w-[59px]' height='59' />
-<Image src='/BuildHubb.png' alt='wedf' width='100' className='w-[169px]' height='100' />
-</div>
-<div class=" px-4 py-16 sm:px-6 lg:px-8">
-<div class="flex justify-center items-center flex-col">
- 
+<div className='pb-4  '>
+
+ <Header />
 
 
-  <form
+<ContainLayout>
+<form
     action=""
-    class="mb-0 mt-6 space-y-4 w-[710px] rounded-lg p-4 bg-[rgba(233,228,255,1)] shadow-lg sm:p-6 lg:p-20"
+    class="mb-0 mt-6 space-y-4 lg:w-[710px] rounded-lg p-4 bg-[rgba(233,228,255,1)] shadow-lg sm:p-6 lg:p-20"
   >
      <h1 class="text-center mx-auto text-[40px] font-bold text-black sm:text-3xl">
   Sign Up
@@ -110,7 +109,7 @@ country </label>
 
    
   </form>
-</div>
+</ContainLayout>
 </div>
 <Footer />
 </>

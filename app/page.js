@@ -18,7 +18,9 @@ export default function Home() {
 <SecondBanner />
 <ThirdBanner />
 <FourthBanner />
+<div className='hidden md:block'>
 <FifthBanner />
+  </div>
 <MissionBanner />
 <TrustedBanner />
 <FaqPage />

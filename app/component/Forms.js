@@ -14,7 +14,7 @@ const Forms = () => {
   
       <form
         action=""
-        class="mb-0 mt-6 space-y-4 w-[400px] md:w-[710px] rounded-lg p-4 bg-[rgba(233,228,255,1)] shadow-lg sm:p-6 lg:p-20"
+        class="mb-0 mt-6 space-y-4  md:w-[710px] rounded-lg p-4 bg-[rgba(233,228,255,1)] shadow-lg sm:p-6 lg:p-20"
       >
         <p class="text-center text-lg font-medium">Sign in to your account</p>
         <div>

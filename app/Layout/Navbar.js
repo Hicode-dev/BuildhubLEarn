@@ -67,8 +67,13 @@ const Header = () => {
     <main>
       <div className='bg-white  dark:bg-[rgb(21,25,41)] dark:text-white shadow-lg'>
         <div className='max-w-[1240]  py-4 flex  justify-between items-center container  capitalize h-25 mx-auto px-5 '>
-         <Image src='/buildhubb_logo-removebg-preview 2.png' height='59' width='59' alt='w' />
-          <ul className='hidden sm:flex font-bold text-gray-400'>
+        <Switch  className='block lg:hidden'
+      // checked={checked}
+      onChange={toggleDarkMode}
+      inputProps={{ 'aria-label': 'controlled' }}
+    />
+         <Image src='/buildhubb_logo-removebg-preview 2.png' height='49' width='49' alt='w' />
+          <ul className='hidden lg:flex font-bold text-gray-400'>
             {links.map((link, index) => (
               <li
                 key={index}
@@ -81,18 +86,20 @@ const Header = () => {
               </li>
             ))}
           </ul> 
-          <div className='flex gap-4 items-center'>
+          <div className='hidden lg:flex gap-4 items-center'>
             <h1 className='font-bold text-black dark:text-white underline text-[16px]'>Suscribe to  Premium</h1>
             <button className='bg-black dark:bg-white dark:text-black text-white px-[3rem] py-[1rem] rounded-[25px]'>
                 <Link href='/signUp'>Get Started</Link>
             </button>
+ 
+        
             <Switch
       // checked={checked}
       onChange={toggleDarkMode}
       inputProps={{ 'aria-label': 'controlled' }}
     />
           </div>
-          <div onClick={handleClick} className='block sm:hidden'>
+          <div onClick={handleClick} className='block lg:hidden'>
             {!nav ? (
               <AiOutlineMenuFold
                 className='fixed right-0 mr-5 ease-in-out duration-700'
@@ -100,7 +107,7 @@ const Header = () => {
               />
             ) : (
               <AiOutlineClose
-                className='fixed right-0 mr-5 ease-in-out duration-700'
+                className='fixed text-black right-0 mr-5 z-[999] ease-in-out duration-700'
                 size={30}
               />
             )}
@@ -108,11 +115,11 @@ const Header = () => {
           <div
             className={
               nav
-                ? 'fixed top-0 bg-black px-4 left-0 w-full z-[999]  border-r h-fit text-black  border-r-gray-600 ease-out duration-700'
+                ? 'fixed top-0 bg-white px-4 left-0 w-full z-[999] dark:bg-[rgb(21,25,41)] dark:text-white  border-r h-fit text-white  border-r-gray-600 ease-out duration-700'
                 : 'fixed top-[-100%]   duration-1000'
-            }
+            } 
           >
-            <div onClick={handleClick} className='block mt-10 sm:hidden'>
+            <div onClick={handleClick} className='block  sm:hidden'>
               {!nav ? (
                 <AiOutlineMenuFold
                   className='fixed right-0 mr-5 text-white ease-in-out duration-700'
@@ -120,21 +127,34 @@ const Header = () => {
                 />
               ) : (
                 <AiOutlineClose
-                  className='fixed text-white right-0 mr-5 ease-in-out duration-700'
+                  className='fixed dark:text-white text-black right-0 mr-5 ease-in-out duration-700'
                   size={30}
                 />
               )}
             </div>
-            <h1 className=' text-3xl p-3 font-bold pt-3 text-[#3e873e] uppercase '>
-              Logo
-            </h1>
-            <ul className='sm:flex text-lg font-bold text-gray-400'>
+            <Switch
+      // checked={checked}
+      onChange={toggleDarkMode}
+      inputProps={{ 'aria-label': 'controlled' }}
+    />
+        
+
+          
+            <ul className='flex flex-col justify-center items-center text-lg font-bold text-gray-400'>
               {links.map((link, index) => (
                 <li className='p-3 cursor-pointer' key={index}>
                   <Link href={link.href}>{link.text}</Link>
+        
                 </li>
+            
               ))}
+                          <h1 className='font-bold text-black dark:text-white underline text-[16px]'>Suscribe to  Premium</h1>
+
+<button className='bg-black   dark:bg-white dark:text-black text-white my-6 px-[3rem] py-[1rem] rounded-[25px]'>
+<Link href='/signUp'>Get Started</Link>
+</button>
             </ul>
+       
           </div>
         </div>
       </div>
