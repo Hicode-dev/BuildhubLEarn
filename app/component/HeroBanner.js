@@ -1,9 +1,16 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import ContainLayout from '../Layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { TypeAnimation } from 'react-type-animation';
 const HeroBanner = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+    });
+  }, [])
   return (
     <div className='relative dark:bg-[rgb(21,25,41)] dark:shadow-sm dark:shadow-[rgb(255,254,240)] dark:text-white bg-[rgb(255,254,240)]'>
 
@@ -34,13 +41,31 @@ const HeroBanner = () => {
   alt="Ellipse 14"
   className="absolute right-0 bottom-30  w-80 h-auto"
 />
-          <h1 className='md:max-w-[370px] font-bold text-[40px]'>
-            Lets Help You Start Out In Tech
-          </h1>
-          <p className='md:max-w-[474px] text-[16px]'>
+<div className='md:max-w-[550px]'>
+  <TypeAnimation
+    preRenderFirstString={true}
+    sequence={[
+      500,
+      'Let Help You Start Out In Tech', // initially rendered starting point
+      1000,
+      'Let Help You Buil Your Project',
+      1000,
+      'Let Help You Buil Your Project',
+      1000,
+      'Let Help You Buil Your Project',
+      500,
+    ]}
+    speed={50}
+    style={{ fontSize: '4em' }}
+    repeat={Infinity}
+  />
+</div>
+          <p  data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" className='md:max-w-[474px] text-[16px]'>
             Buildbubb helps in Connecting developers and designers to help you create impactful projects and elevate your portfolio
           </p>
-          <div className='flex items-center gap-4'>
+          <div  data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" className='flex items-center gap-4'>
             <button className='bg-black text-white px-[3rem] py-[1rem] rounded-[25px]'>
               <Link href='/signUp' >Join Waitlist</Link>
             </button>

@@ -4,12 +4,13 @@ import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMenuFold } from 'react-icons/ai';
 import Switch from '@mui/material/Switch';
 import Image from 'next/image';
+import { RiMoonFill, RiSunFill } from 'react-icons/ri'
+
 const Header = () => {
   const [nav, setNav] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
   const [checked, setChecked] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
-
   const handleChange = (event) => {
     setChecked(event.target.checked);
   }
@@ -67,11 +68,14 @@ const Header = () => {
     <main>
       <div className='bg-white  dark:bg-[rgb(21,25,41)] dark:text-white shadow-lg'>
         <div className='max-w-[1240]  py-4 flex  justify-between items-center container  capitalize h-25 mx-auto px-5 '>
-        <Switch  className='block lg:hidden'
-      // checked={checked}
-      onChange={toggleDarkMode}
-      inputProps={{ 'aria-label': 'controlled' }}
-    />
+        <div className='block lg:hidden' onClick={toggleDarkMode}>
+        {darkMode ? (
+          <RiSunFill className="h-8 w-8 text-gray-600 dark:text-white" />
+        ) : (
+          <RiMoonFill className="h-8 w-8 text-gray-600 dark:text-white" />
+        )}
+        </div>
+   
          <Image src='/buildhubb_logo-removebg-preview 2.png' height='49' width='49' alt='w' />
           <ul className='hidden lg:flex font-bold text-gray-400'>
             {links.map((link, index) => (
@@ -93,11 +97,18 @@ const Header = () => {
             </button>
  
         
-            <Switch
+            {/* <Switch
       // checked={checked}
       onChange={toggleDarkMode}
       inputProps={{ 'aria-label': 'controlled' }}
-    />
+    /> */}
+        <div className='lg:block hidden' onClick={toggleDarkMode}>
+        {darkMode ? (
+          <RiSunFill className="h-8 w-8 text-gray-600 dark:text-white" />
+        ) : (
+          <RiMoonFill className="h-8 w-8 text-gray-600 dark:text-white" />
+        )}
+        </div>
           </div>
           <div onClick={handleClick} className='block lg:hidden'>
             {!nav ? (

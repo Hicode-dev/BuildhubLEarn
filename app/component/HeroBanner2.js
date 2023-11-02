@@ -1,8 +1,16 @@
+'use client'
 import ContainLayout from '../Layout/Container'
 import Link from 'next/link'
-import React from 'react'
+import React,{useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const HeroBanner2 = ({ title, subtitle, children, description }) => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+    });
+  }, [])
   return (
  
      <div className=" bg-cover  bg-left  md:h-[100vh]  h-[100%] w-[100%] md:w-[100%] "
@@ -12,8 +20,8 @@ const HeroBanner2 = ({ title, subtitle, children, description }) => {
     
 <ContainLayout>
   <div className='flex  md:max-w-[705px] flex-col mx-auto items-center justify-center items-center text-center py-[16rem]'>
-    <h3 className='text-[40px] text-white font-bold font-museo'>About US</h3>
-    <p className='text-[18px] text-white' >Welcome to Buildhubb! Our mission is to empower individuals to thrive in the tech industry and contribute to innovative solutions. We offer structured learning programs, foster vibrant tech communities, support startups, and connect businesses with skilled professionals. Join us and be part of a dynamic community shaping the future of technology. Together, we can build a brighter future through innovation and collaboration.</p>
+    <h3 className='text-[40px] text-white font-bold font-museo'  data-aos="fade-up"> About US</h3>
+    <p className='text-[18px] text-white'   data-aos="fade-up">Welcome to Buildhubb! Our mission is to empower individuals to thrive in the tech industry and contribute to innovative solutions. We offer structured learning programs, foster vibrant tech communities, support startups, and connect businesses with skilled professionals. Join us and be part of a dynamic community shaping the future of technology. Together, we can build a brighter future through innovation and collaboration.</p>
 
 
   </div>

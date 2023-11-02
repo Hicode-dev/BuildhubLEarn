@@ -1,8 +1,10 @@
 import React from 'react'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 const MissionCard = ({svg, title, text, className}) => {
   return (
-    <div className={`dark:bg-[rgb(21,25,41)] dark:text-white ${className} `}>
+    <div data-aos="fade-down-right"  className={`dark:bg-[rgb(21,25,41)] dark:text-white ${className} `}>
         <div>
             {svg}
         </div>

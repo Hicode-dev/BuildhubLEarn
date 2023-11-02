@@ -15,7 +15,7 @@ const page = () => {
 <ContainLayout>
 <form
     action=""
-    class="mb-0 mt-6 space-y-4 lg:w-[710px] rounded-lg p-4 bg-[rgba(233,228,255,1)] shadow-lg sm:p-6 lg:p-20"
+    class="mb-0 mt-6 space-y-4 lg:w-[710px] mx-auto rounded-lg p-4 bg-[rgba(233,228,255,1)] shadow-lg sm:p-6 lg:p-20"
   >
      <h1 class="text-center mx-auto text-[40px] font-bold text-black sm:text-3xl">
   Sign Up

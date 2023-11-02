@@ -1,12 +1,24 @@
+'use client'
 import React from 'react'
 import ContainLayout from '../Layout/Container'
 import Image from 'next/image'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 const WhoWeAre = () => {
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+    });
+  }, []);
   return (
     <ContainLayout>
     <div className='grid md:grid-cols-2 py-12 items-center gap-10 '>
     
-     <div>
+     <div  data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
        <div>
       {/* <p className='text-[20px] font-yeseva'> Mission</p> */}
       <h3 className='text-[34px] font-bold'>Who We Are</h3>
@@ -18,15 +30,22 @@ We are Buildhubb, a dedicated tech community empowering individuals to find thei
 </div>
        </div>
      </div>
-     <div>
+     <div  data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
+
        <Image src='/Vector.png'  height='500' width='500' alt='ed'  />
      </div>
      </div>
     <div className='grid md:grid-cols-2 py-12 items-center gap-10 '>
-    <div>
+    <div  data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
        <Image src='/Vector (1).png'  height='500' width='500' alt='ed'  />
      </div>
-     <div>
+     <div  data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
        <div>
       {/* <p className='text-[20px] font-yeseva'> Mission</p> */}
       <h3 className='text-[34px] font-bold'>What We Do</h3>
@@ -43,7 +62,9 @@ We are Buildhubb, a committed tech community empowering individuals, teaching in
     <div className='grid md:grid-cols-2 py-12 items-center gap-10 '>
     
      <div>
-       <div>
+       <div  data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
       {/* <p className='text-[20px] font-yeseva'> Mission</p> */}
       <h3 className='text-[34px] font-bold'> Our Process</h3>
 <div className='md:max-w-[500px] mt-6'>
@@ -54,7 +75,9 @@ At Buildhubb, we empower individuals to discover their path in tech through pers
 </div>
        </div>
      </div>
-     <div>
+     <div  data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
        <Image src='/Vector (3).png'  height='500' width='500' alt='ed'  />
      </div>
      </div>

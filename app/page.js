@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import Header from './Layout/Navbar'
 import HeroBanner from './component/HeroBanner'
@@ -10,7 +12,17 @@ import MissionBanner from './component/MissionBanner'
 import TrustedBanner from './component/TrustedBanner'
 import FaqPage from './component/FaqBanner'
 import Footer from './component/Footer'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 export default function Home() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+    });
+  }, []);
+
   return (
 <div className='dark:bg-[rgb(21,25,41)] dark:text-white'>
   <Header />
@@ -18,7 +30,7 @@ export default function Home() {
 <SecondBanner />
 <ThirdBanner />
 <FourthBanner />
-<div className='hidden md:block'>
+<div className='md:hidden block'>
 <FifthBanner />
   </div>
 <MissionBanner />
