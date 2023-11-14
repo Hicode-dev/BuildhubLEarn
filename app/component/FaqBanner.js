@@ -72,7 +72,7 @@ const FaqPage = () => {
               expanded={expandedFaqId === faq.id} // Pass expanded state
             />
             {expandedFaqId === faq.id && (
-              <div className='mt-2'>{faq.answer}</div>
+              <div className='mt-2 bg-white'>{faq.answer}</div>
             )}
           </div>
         ))}

@@ -45,15 +45,12 @@ const HeroBanner = () => {
   <TypeAnimation
     preRenderFirstString={true}
     sequence={[
-      500,
-      'Let Help You Start Out In Tech', // initially rendered starting point
       1000,
-      'Let Help You Buil Your Project',
+      'Lets Help You Start Out In Tech', // initially rendered starting point
+      3000,
+      'Lets Help You Build Your Project',
       1000,
-      'Let Help You Buil Your Project',
-      1000,
-      'Let Help You Buil Your Project',
-      500,
+ 
     ]}
     speed={50}
     style={{ fontSize: '4em' }}
@@ -67,7 +64,7 @@ const HeroBanner = () => {
           <div  data-aos="fade-up"
      data-aos-anchor-placement="center-bottom" className='flex items-center gap-4'>
             <button className='bg-black text-white px-[3rem] py-[1rem] rounded-[25px]'>
-              <Link href='/signUp' >Join Waitlist</Link>
+              <Link href='/signUp' >Apply</Link>
             </button>
             <button className='border-black text-black border dark:border-white dark:text-white px-[3rem] py-[1rem] rounded-[25px]'>
             <Link href='/dashboard' > Learn More</Link>

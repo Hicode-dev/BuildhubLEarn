@@ -13,6 +13,7 @@ import TrustedBanner from './component/TrustedBanner'
 import FaqPage from './component/FaqBanner'
 import Footer from './component/Footer'
 import AOS from 'aos';
+import KinikanRealest  from './component/KinikanRealest'
 import 'aos/dist/aos.css';
 import { useEffect } from 'react'
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
 <MissionBanner />
 <TrustedBanner />
 <FaqPage />
+<KinikanRealest />
 <Footer />
 </div>
   )

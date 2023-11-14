@@ -11,7 +11,7 @@ const MissionBanner = () => {
 
   return (
   <ContainLayout>
-      <div className="flex justify-center flex-col lg:px-16">
+      <div className="flex my-10 justify-center flex-col lg:px-16">
       <div className="grid lg:flex justify-between items-center" >
         <div >
           <p className="text-gray-800 text-md" />
