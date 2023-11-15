@@ -1,3 +1,5 @@
+
+"use client"
 import React from 'react'
 import HeroBanner2 from '../component/HeroBanner2'
 import Header from '../Layout/Navbar'

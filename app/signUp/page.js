@@ -1,119 +1,153 @@
-import React from 'react'
-import Footer from '../component/Footer'
-import Image from 'next/image'
-import ContainLayout from '../Layout/Container'
-import Header from '../Layout/Navbar'
+'use client'
+import React, { useState } from 'react';
+import Footer from '../component/Footer';
+import ContainLayout from '../Layout/Container';
+import Header from '../Layout/Navbar';
 
-const page = () => {
-    return (
-<>
-<div className='pb-4  '>
+const Page = () => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [country, setCountry] = useState('');
+  const [skill, setSkill] = useState('');
+  const [loading, setLoading] = useState(false);
 
- <Header />
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const response = await fetch('https://modern-red-gecko.cyclic.app/sendmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          subject: "Hey Chief someone jsut signed up ",
+          name: fullName,
+          mail: 'Buildhubb01@gmail.com',
+          text: `Email: ${email}\nFullname: ${fullName}\nCountry: ${country}\nSkill : ${skill}`,
+        }),
+      });
 
+      if (response.ok) {
+        // Reset form and show success message
+        setFullName('');
+        setEmail('');
+        setCountry('');
+        setSkill('');
+        setMessage('');
+        alert('Message sent successfully!'); // You can replace this with your preferred notification method
+      } else {
+        alert('Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      alert('Something went wrong!');
+    } finally {
+      setLoading(false);
+    }
 
-<ContainLayout>
-<form
-    action=""
-    class="mb-0 mt-6 space-y-4 lg:w-[710px] mx-auto rounded-lg p-4 bg-[rgba(233,228,255,1)] shadow-lg sm:p-6 lg:p-20"
-  >
-     <h1 class="text-center mx-auto text-[40px] font-bold text-black sm:text-3xl">
-  Sign Up
-  </h1>
-    <div>
-<h1>Full Name</h1>
-<div>
-    
-    <label for="subject" class="sr-only">Full Name</label>
-      <div class="relative">
-        <input
-          type="text"
-          class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-          placeholder="Full Name"
-        />
+  };
 
-     
-      </div>
-    </div>
-</div>
-
-<div>
-<h1>Email</h1>
-    <div>
-      <label for="email" class="sr-only">Email</label>
-
-      <div class="relative">
-        <input
-          type="email"
-          class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-          placeholder="Enter email"
-        />
-
-        <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 text-gray-400"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+  return (
+    <>
+      <div className="pb-4">
+        <Header />
+        <ContainLayout>
+          <form
+            onSubmit={handleSubmit}
+            className="mb-0 mt-6 space-y-4 lg:w-[710px] mx-auto rounded-lg p-4 bg-[rgba(233,228,255,1)] shadow-lg sm:p-6 lg:p-20"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-            />
-          </svg>
-        </span>
+            <h1 className="text-center mx-auto text-[40px] font-bold text-black sm:text-3xl">
+              Sign Up
+            </h1>
+            <div>
+              <h1>Full Name</h1>
+              <div>
+                <label htmlFor="fullName" className="sr-only">
+                  Full Name
+                </label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    placeholder="Full Name"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h1>Email</h1>
+              <div>
+                <label htmlFor="email" className="sr-only">
+                  Email
+                </label>
+                <div className="relative">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    placeholder="Enter email"
+                  />
+                  <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+                    {/* Email validation icon */}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <label className="block mb-2 text-black outline-none">Country</label>
+            <select
+              id="countries"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              className="select-field outline-none reselect py-4 focus-within:border-[#8c1ae6] w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            >
+              <option value="">Choose a country</option>
+              <option value="US (United States)">United States</option>
+              <option value="CA (Canada)">Canada</option>
+              <option value="FR (France)">France</option>
+              <option value="DE (Germany)">Germany</option>
+            </select>
+
+            <label className="block mb-2 text-black outline-none">Skills</label>
+            <select
+              id="skills"
+              value={skill}
+              onChange={(e) => setSkill(e.target.value)}
+              className="select-field outline-none reselect py-4 focus-within:border-[#8c1ae6] w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            >
+              <option value="">Choose a skill</option>
+              <option value="Frontend Development">Frontend Development</option>
+              <option value="Backend Development">Backend Development</option>
+              <option value="Product Management">Product Management</option>
+              <option value="Project Management">Project Management</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Product Design">Product Design</option>
+              <option value="Technical Writers">Technical Writers</option>
+              <option value="Cyber Security">Cyber Security</option>
+            </select>
+
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="block w-full rounded-full bg-black px-5 py-4 my-4 text-sm font-medium text-white"
+              disabled={loading}
+          >
+            {loading ? 'Sending...' : 'Send Message'}
+              
+            </button>
+            <p className="text-center text-lg font-medium">
+              By signing up, you agree to our Terms of Use and Privacy Policy
+            </p>
+          </form>
+        </ContainLayout>
       </div>
-    </div>
-</div>
+      <Footer />
+    </>
+  );
+};
 
-
-<label className="block  mb-2 text-black outline-none">
-
-country </label>
-          <select id="countries"
-            className="select-field outline-none reselect py-4 focus-within:border-[#8c1ae6]  w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm">
-            <option className="">Choose a country</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
-          </select>
-
-
-   
-      <label className="block mb-2 text-black outline-none ">
-
-          What skill do you want to learn?</label>
-          <select   id="skills"
-            className="select-field outline-none reselect py-4 focus-within:border-[#8c1ae6]  w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm">
-            <option className="">Frontend Development</option>
-            <option value="US">Backend Development</option>
-            <option value="CA">Product Management</option>
-            <option value="FR">project Management</option>
-            <option value="DE">Digital Marketing </option>
-            <option value="DE">product Design </option>
-            <option value="DE">Tecnical Writers </option>
-            <option value="DE">Cyber security </option>
-          </select>
-
-    <button
-      type="submit"
-      class="block w-full rounded-full bg-black px-5 py-4 my-4 text-sm font-medium text-white"
-    >
-  send Message
-    </button>
-    <p class="text-center text-lg font-medium">By signing up, you agree to our Terms of Use and Privacy Policy</p>
-
-   
-  </form>
-</ContainLayout>
-</div>
-<Footer />
-</>
-      )
-}
-
-export default page
+export default Page;
