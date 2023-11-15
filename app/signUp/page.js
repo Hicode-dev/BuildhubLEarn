@@ -3,17 +3,26 @@ import React, { useState } from 'react';
 import Footer from '../component/Footer';
 import ContainLayout from '../Layout/Container';
 import Header from '../Layout/Navbar';
+import { notification, Space } from 'antd';
 
 const Page = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [country, setCountry] = useState('');
   const [skill, setSkill] = useState('');
-  const [loading, setLoading] = useState(false);
+
+
 
   const handleSubmit = async (e) => {
+    
+  const handleNotification = (type) => {
+    api[type]({
+      message: 'Sign Up Success',
+      description: 'Thank you for signing up!',
+    });
+  };
     e.preventDefault();
-    setLoading(true);
+
     try {
       const response = await fetch('https://modern-red-gecko.cyclic.app/sendmail', {
         method: 'POST',
@@ -29,22 +38,22 @@ const Page = () => {
       });
 
       if (response.ok) {
-        // Reset form and show success message
+        console.log('Email sent successfully!');
+        handleNotification('success');
+
         setFullName('');
         setEmail('');
-        setCountry('');
         setSkill('');
-        setMessage('');
-        alert('Message sent successfully!'); // You can replace this with your preferred notification method
+        setCountry('');
+
+        // Handle success (e.g., show a success message to the user)
       } else {
-        alert('Failed to send message. Please try again later.');
+        console.error('Failed to send email:', response.statusText);
+        // Handle failure (e.g., show an error message to the user)
       }
     } catch (error) {
-      alert('Something went wrong!');
-    } finally {
-      setLoading(false);
+      console.error('Error sending email:', error);
     }
-
   };
 
   return (
@@ -134,10 +143,8 @@ const Page = () => {
               type="submit"
               onClick={handleSubmit}
               className="block w-full rounded-full bg-black px-5 py-4 my-4 text-sm font-medium text-white"
-              disabled={loading}
-          >
-            {loading ? 'Sending...' : 'Send Message'}
-              
+            >
+              Send Message
             </button>
             <p className="text-center text-lg font-medium">
               By signing up, you agree to our Terms of Use and Privacy Policy
