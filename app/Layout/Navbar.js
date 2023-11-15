@@ -102,7 +102,7 @@ const Header = () => {
       onChange={toggleDarkMode}
       inputProps={{ 'aria-label': 'controlled' }}
     /> */}
-        <div className='lg:block hidden' onClick={toggleDarkMode}>
+        <div className='lg:block hidden z-[999]' onClick={toggleDarkMode}>
         {darkMode ? (
           <RiSunFill className="h-8 w-8 text-gray-600 dark:text-white" />
         ) : (
@@ -130,7 +130,7 @@ const Header = () => {
                 : 'fixed top-[-100%]   duration-1000'
             } 
           >
-            <div onClick={handleClick} className='block  sm:hidden'>
+            <div onClick={handleClick} className='block z-[999]  sm:hidden'>
               {!nav ? (
                 <AiOutlineMenuFold
                   className='fixed right-0 mr-5 text-white ease-in-out duration-700'
