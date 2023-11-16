@@ -1,3 +1,4 @@
+'use client '
 import React,{useEffect} from 'react';
 import ContainLayout from '../Layout/Container';
 import Image from 'next/image';
@@ -64,7 +65,7 @@ const HeroBanner = () => {
           <div  data-aos="fade-up"
      data-aos-anchor-placement="center-bottom" className='flex items-center gap-4'>
             <button className='bg-black text-white px-[3rem] py-[1rem] rounded-[25px]'>
-              <Link href='/signUp' >Apply</Link>
+              <Link href='https://apply.buildhubb.com' >Join cohort</Link>
             </button>
             <button className='border-black text-black border dark:border-white dark:text-white px-[3rem] py-[1rem] rounded-[25px]'>
             <Link href='/dashboard' > Learn More</Link>

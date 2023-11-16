@@ -93,7 +93,7 @@ const Header = () => {
           <div className='hidden lg:flex gap-4 items-center'>
             <h1 className='font-bold text-black dark:text-white underline text-[16px]'>Suscribe to  Premium</h1>
             <button className='bg-black dark:bg-white dark:text-black text-white px-[3rem] py-[1rem] rounded-[25px]'>
-                <Link href='/signUp'>Get Started</Link>
+                <Link href='https://apply.buildhubb.com'>Get Started</Link>
             </button>
  
         
@@ -162,7 +162,7 @@ const Header = () => {
                           <h1 className='font-bold text-black dark:text-white underline text-[16px]'>Suscribe to  Premium</h1>
 
 <button className='bg-black   dark:bg-white dark:text-black text-white my-6 px-[3rem] py-[1rem] rounded-[25px]'>
-<Link href='/signUp'>Get Started</Link>
+<Link href='https://apply.buildhubb.com'>Get Started</Link>
 </button>
             </ul>
        
