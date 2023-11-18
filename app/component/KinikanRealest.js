@@ -17,14 +17,17 @@ const TrustedBanner = () => {
           <p className="text-lg text-gray-800 dark:text-white">
            There has never bveen a better time than right now
           </p>
-        </div>
+          </div>
+          <br />
         <div  className='flex justify-center mx-auto items-center gap-x-4'>
-            <button className='bg-black text-white px-[3rem] py-[1rem] rounded-[25px]'>
-              <Link href='/signUp' >Apply </Link>
-            </button>
-            <button className='border-black text-black border dark:border-white dark:text-white px-[3rem] py-[1rem] rounded-[25px]'>
-            <Link href='/dashboard' > Learn More</Link>
-            </button>
+            <button className='bg-black text-white px-[2rem] py-[0.5rem] md:px-[3rem] md:py-[1rem] rounded-[25px]'>
+  <Link href='/signUp'>Apply</Link>
+</button>
+
+<button className='border-black text-black border dark:border-white dark:text-white px-[2rem] py-[0.5rem] md:px-[3rem] md:py-[1rem] rounded-[25px]'>
+  <Link href='/dashboard'>Learn More</Link>
+</button>
+
           </div>
       </div>
     </div>

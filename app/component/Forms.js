@@ -54,13 +54,12 @@ const Forms = ({ recipientEmail }) => {
         </h1>
 
         <p className="mx-auto text-2xl mt-4 max-w-lg text-center text-black">
-          Lorem ipsum dolor sit amet consectetur. Neque ipsum nec odio duis
-          accumsan
+          Contact Us by filling and submitting the form below.
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="mb-0 mt-6 space-y-4  w-1/2 rounded-lg p-4 bg-purple-50 shadow-lg sm:p-6 lg:p-20"
+          className="mb-0 mt-6 space-y-4 md:w-1/2 rounded-lg p-4 bg-purple-50 shadow-lg sm:p-6 lg:p-20"
         >
           <p className="text-center text-lg font-medium">Sign in to your account</p>
 

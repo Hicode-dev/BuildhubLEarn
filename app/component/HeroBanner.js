@@ -54,7 +54,7 @@ const HeroBanner = () => {
  
     ]}
     speed={50}
-    style={{ fontSize: '4em' }}
+    style={{ fontSize: '2em', fontWeight: 'bold' }}
     repeat={Infinity}
   />
 </div>
@@ -62,14 +62,16 @@ const HeroBanner = () => {
      data-aos-anchor-placement="center-bottom" className='md:max-w-[474px] text-[16px]'>
             Buildbubb helps in Connecting developers and designers to help you create impactful projects and elevate your portfolio
           </p>
-          <div  data-aos="fade-up"
+          <div data-aos="fade-up"
      data-aos-anchor-placement="center-bottom" className='flex items-center gap-4'>
-            <button className='bg-black text-white px-[3rem] py-[1rem] rounded-[25px]'>
-              <Link href='https://apply.buildhubb.com' >Join cohort</Link>
-            </button>
-            <button className='border-black text-black border dark:border-white dark:text-white px-[3rem] py-[1rem] rounded-[25px]'>
-            <Link href='/dashboard' > Learn More</Link>
-            </button>
+            <button className='bg-black text-white px-[2rem] py-[0.5rem] md:px-[3rem] md:py-[1rem] rounded-[25px]'>
+  <Link href='https://apply.buildhubb.com'>Join cohort</Link>
+</button>
+
+<button className='border-black text-black border dark:border-white dark:text-white px-[2rem] py-[0.5rem] md:px-[3rem] md:py-[1rem] rounded-[25px]'>
+  <Link href='/dashboard'>Learn More</Link>
+</button>
+
           </div>
         </div>
     </div>

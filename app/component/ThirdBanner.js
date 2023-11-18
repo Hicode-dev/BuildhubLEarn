@@ -8,7 +8,7 @@ const ThirdBanner = () => {
     <div>
       <ContainLayout>
         <div className='py-10 '>
-            <h1 className=' text-[32px] md:text-[40px] max-w-[572px] text-center font-[600] flex justify-center items-center mx-auto '>Powerful Collaboration technic.</h1>
+            <h1 className=' text-[24px] md:text-[40px] max-w-[572px] text-center font-[600] flex justify-center items-center mx-auto '>Powerful Collaboration technic.</h1>
             <div className='block md:hidden'>
                     <Image src='/Group 40 (3).png' width='700' height='700' alt='op' />
                 </div>
