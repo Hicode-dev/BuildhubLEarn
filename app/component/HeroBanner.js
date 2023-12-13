@@ -37,11 +37,11 @@ const HeroBanner = () => {
   alt="Ellipse 14"
   className="absolute right-0 bottom-30  w-80 h-auto"
 />
-        <img
+        {/* <img
   src='/Ellipse 18 (1).png'
   alt="Ellipse 14"
   className="absolute right-0 bottom-30  w-80 h-auto"
-/>
+/> */}
 <div className='md:max-w-[550px]'>
   <TypeAnimation
     preRenderFirstString={true}
